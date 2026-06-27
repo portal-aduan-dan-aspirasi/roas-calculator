@@ -318,6 +318,9 @@
     .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .comparison-grid .card { margin-bottom: 0; padding: 20px; }
     .note { padding: 16px; background: rgba(14, 165, 233, 0.1); border-radius: 12px; margin-top: 16px; font-size: 0.9rem; line-height: 1.5; }
+
+    /* Komentar (Disqus) */
+    #comment-section #disqus_thread { min-height: 80px; }
   </style>
 </head>
 <body>
@@ -532,6 +535,28 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- =========================================
+           KOLOM KOMENTAR (DISQUS)
+           ========================================= -->
+      <div class="card" id="comment-section">
+        <h2>💬 Diskusi & Komentar</h2>
+        <p class="subtitle" style="margin-bottom:16px;">Ada pertanyaan atau masukan soal ROAS dan kalkulator ini? Tulis di kolom komentar di bawah.</p>
+        <div id="disqus_thread"></div>
+        <noscript>Aktifkan JavaScript untuk melihat <a href="https://disqus.com/?ref_noscript">komentar yang didukung oleh Disqus</a>.</noscript>
+        <script>
+          var disqus_config = function () {
+            this.page.url = window.location.href;
+            this.page.identifier = window.location.pathname || 'roas-calculator-page';
+          };
+          (function () {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://https-roas-calculator-mevolia202-workers-dev.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
       </div>
     </div>
   </div>
